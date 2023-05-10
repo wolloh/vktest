@@ -92,7 +92,7 @@ namespace vktest.Services.Movies
             return user;
         }
 
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<IEnumerable<User>> GetUsers(int offset,int limit)
         {
             using var context = await contextFactory.CreateDbContextAsync();
             var users = context
@@ -100,6 +100,11 @@ namespace vktest.Services.Movies
                 .Include(x=>x.State) 
                 .Include(x=>x.Group)
                 .AsQueryable();
+
+            users=users
+                   .Skip(Math.Max(offset, 0))
+                   .Take(Math.Max(0, Math.Min(limit, 1000)));
+
             var data = (await users.ToListAsync());
             return data;
         }

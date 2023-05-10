@@ -10,7 +10,7 @@ namespace vktest.Services.Movies
 {
     public interface IUserService
     {
-        Task<IEnumerable<User>> GetUsers();
+        Task<IEnumerable<User>> GetUsers(int offset,int limit);
         Task<User> GetUser(int userId);
         Task<User> AddUser(AddUserModel model);
         Task DeleteUser(int userId);

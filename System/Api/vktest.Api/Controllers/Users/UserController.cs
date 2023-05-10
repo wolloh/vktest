@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using vktest.Api.Controllers.Models;
 using vktest.Api.Controllers.Users.Models;
@@ -29,9 +30,9 @@ namespace vktest.Api.Controllers.Users
 
         [ProducesResponseType(typeof(UserResponse), 200)]
         [HttpGet("")]
-        public async Task<IEnumerable<UserResponse>> GetUsers()
+        public async Task<IEnumerable<UserResponse>> GetUsers([FromQuery] int offset = 0, [FromQuery] int limit = 10)
         {
-            var users = await userService.GetUsers();
+            var users = await userService.GetUsers(offset,limit);
             var response = mapper.Map<IEnumerable<UserResponse>>(users);
 
             return response;
