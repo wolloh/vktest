@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>vktest.Api</name>
+    </assembly>
+    <members>
+        <member name="M:vktest.Api.Configuration.CorsConfiguration.AddAppCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add CORS
+            </summary>
+            <param name="services">Services collection</param>
+        </member>
+        <member name="M:vktest.Api.Configuration.CorsConfiguration.UseAppCors(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Use service
+            </summary>
+            <param name="app">Application</param>
+        </member>
+        <member name="M:vktest.Api.Configuration.LoggerConfiguration.AddAppLogger(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary>
+            Add logger
+            </summary>
+        </member>
+        <member name="M:Api.Configuration.AutoMapperConfiguration.AddAppAutoMappers(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add automappers
+            </summary>
+            <param name="services">Services collection</param>
+        </member>
+    </members>
+</doc>
